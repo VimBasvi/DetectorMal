@@ -24,12 +24,12 @@ with app.app_context():
   db.create_all()
 
 
-#@app.route("/")
-@app.route("/register")
+@app.route("/")
+@app.route("/home")
 def home():
     return render_template('home.html', subtitle='Home Page', text='This is the home page')
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit(): # checks if entries are valid
@@ -49,13 +49,6 @@ def webhook():
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
-# @app.route("/register")
-# def hello_world():
-#     return render_template('home.html', subtitle='Home Page', text='This is the home page')
-    
-@app.route("/second_page")
-def second_page():
-    return render_template('second_page.html', subtitle='Second Page', text='This is the second page')
     
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
