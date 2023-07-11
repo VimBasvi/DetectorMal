@@ -3,6 +3,8 @@ from flask import Flask, render_template, url_for, flash, redirect, request
 from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
+import requests
+import subprocess
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -27,7 +29,7 @@ with app.app_context():
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', subtitle='Home Page', text='This is the home page')
+    return render_template('home.html', subtitle='About', text='This is the home page')
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -39,6 +41,42 @@ def register():
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('home')) # if so - send to home page
     return render_template('register.html', title='Register', form=form)
+
+@app.route("/sandbox")
+def sandbox():
+    return render_template("sandbox.html")
+
+@app.route("/urlResult", methods=['POST', 'GET'])
+def urlResult():
+    output = request.form.to_dict()
+    url = output["url"]
+
+    headers = {'accept': 'application/json',
+               'user-agent': 'Falcon Sandbox',
+               'api-key': 'rr8apy9g30c3065f9evu945q229921c6fe9gl7hxba57df3a6e117h4012e8d257',
+               'Content-Type': 'application/x-www-form-urlencoded'}
+    data = 'scan_type=all&url=' + url
+    response = requests.get('https://www.hybrid-analysis.com/api/v2/quick-scan/url', headers=headers, data=data)
+    urlOutput = response.json()
+
+    return render_template("sandbox.html", urlOutput=urlOutput)
+
+@app.route("/ping")
+def ping():
+    return render_template("ping.html")
+
+@app.route("/dnsResult")
+def dnsResult():
+    output = request.form.to_dict()
+    dns = output["dns"]
+
+    dnsOutput = subprocess.run(['ping', dns], capture_output=True, text=True).stdout
+    return render_template("ping.html", dnsOutput=dnsOutput)
+
+@app.route("/nslookup")
+def nslookup():
+    return render_template("nslookup.html")
+
 
 @app.route("/update_server", methods=['POST'])
 def webhook():
