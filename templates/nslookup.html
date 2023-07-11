@@ -1,0 +1,19 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<h1>Ping Page</h1>
+<p>This text will be different across different templates.</p>
+
+<form>
+    <div class="mb-3">
+        <label for="urlInput" class="form-label">URL</label>
+        <input type="text" class="form-control" id="urlInput" placeholder="Enter URL">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Query</button>
+</form>
+
+<div class="output">
+    <h2>Output</h2>
+    <p>Result</p>
+</div>
+{% endblock %}
