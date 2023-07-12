@@ -1,3 +1,3 @@
 import subprocess
-
-print(subprocess.run(['nslookup', 'google.com'], capture_output=True, text=True).stdout)
+link = "google.com"
+print(subprocess.run(['nslookup', link], capture_output=True, text=True).stdout)

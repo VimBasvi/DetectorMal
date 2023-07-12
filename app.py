@@ -29,7 +29,7 @@ with app.app_context():
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', subtitle='About', text='This is the home page')
+    return render_template('home.html')
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
