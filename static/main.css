@@ -1,30 +1,40 @@
- h1 {
-    font-weight: 200px;
- }
- .button-container {
-   display: flex;
-   align-items: center;
-   margin-bottom: 20px;
- }
-
- .button-info {
-   margin-right: 10px;
- }
-
-.custom-button{
-   background-color: #646465; /* Dark slate gray */
-   border-color: #231F20; /* Dark gray */
-   color: #FFFAF1; /* Cream */
-   padding: 10px 20px; /* Add padding within the button */
-   margin: 35px;
-   margin-bottom: 20px; /* Add margin at the bottom of the button */
-   width: 200px; /* Set the width of the button */
+body {
+  /*background-color:  #FCE8C9; Light Beige */
+  font-family: 'IM Fell English SC', serif;
+  font-size: 20px; /* Adjusted font size for body */
+  font-weight: 400;
+  line-height: normal;
+  margin: 35px; /* Add margin around the body */
 }
- body{
-    background-color: #FFFAF1;
- }
+
+h1 {
+  font-weight: 200; /* Adjusted font weight for h1 */
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.button-info {
+  margin-right: 10px;
+}
+
+.custom-button {
+  background-color: #E6B0AA; /* Rose Quartz */
+  border-color: #D98880; /* Pastel Red */
+  color: #FFFFFF; /* White */
+  padding: 10px 20px;
+  margin: 35px;
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+body {
+  background-color: #FAF6F1; /* Light Beige */
+}
 
 input[type="text"] {
-    margin-top: 10px;
+  margin-top: 10px;
 }
-
