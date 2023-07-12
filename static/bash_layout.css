@@ -80,6 +80,7 @@ label{
   padding: 10px 20px;  Add padding within the button */
   margin: 35px;
   margin-bottom: 20px; /* Add margin at the bottom of the button */
+  align: center
 }
 
 .output {
