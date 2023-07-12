@@ -1,0 +1,87 @@
+body2 {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 7px solid ;
+  background: #FFFAF1;
+  background-color: #FFFFF;
+  background-color: #FCE8C9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  background-color: #FCE8C9; /* Cream */
+  font-family: 'IM Fell English SC', serif;
+  font-size: 20px; /* Adjusted font size for body */
+  font-weight: 400;
+  line-height: normal;
+  margin: 35px; /* Add margin around the body */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the body height to full viewport height */
+}
+
+h1 {
+  font-size: 100px; /* Adjusted font size for h1 */
+  margin-bottom: 20px; /* Add margin at the bottom of the heading */
+}
+
+p {
+  font-size: 18px; /* Adjusted font size for p */
+  margin: 20px;
+
+  margin-bottom: 10px; /* Add margin at the bottom of paragraphs */
+  text-transform: capitalize;
+}
+label{
+    margin-bottom: 45px;
+
+}
+
+
+
+.form-control {
+  background-color: #3B3A3C; /* Dark charcoal */
+  color: #FFFAF1; /* Cream */
+  padding: 10px; /* Add padding within the form control */
+  margin-bottom: 40px; /* Add margin at the bottom of the form control */
+  width: 100%
+}
+
+
+.form-container {
+    max-width: 500px; /* Set a maximum width for the form container */
+    margin: 0 auto; /* Center align the form container */
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: #646465; /* Dark slate gray */
+  border-color: #231F20; /* Dark gray */
+  color: #FFFAF1; /* Cream */
+  padding: 10px 20px;  Add padding within the button */
+  margin: 35px;
+  margin-bottom: 20px; /* Add margin at the bottom of the button */
+}
+
+.output {
+  background-color: #231F20; /* Dark gray */
+  color: #FFFAF1; /* Cream */
+  padding: 15px; /* Add padding within the output div */
+  width: 90%; /* Expand the width to 100% of its parent container */
+  height: 200px; /* Set a fixed height for the output box */
+  overflow: auto; /* Add scrollbar when content exceeds the box height */
+}
+
+
+
+
