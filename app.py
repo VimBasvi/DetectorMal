@@ -56,7 +56,7 @@ def urlResult():
                'api-key': 'rr8apy9g30c3065f9evu945q229921c6fe9gl7hxba57df3a6e117h4012e8d257',
                'Content-Type': 'application/x-www-form-urlencoded'}
     data = 'scan_type=all&url=' + url
-    response = requests.get('https://www.hybrid-analysis.com/api/v2/quick-scan/url', headers=headers, data=data)
+    response = requests.post('https://www.hybrid-analysis.com/api/v2/quick-scan/url', headers=headers, data=data)
     urlOutput = response.json()
 
     return render_template("sandbox.html", urlOutput=urlOutput)
@@ -65,7 +65,7 @@ def urlResult():
 def ping():
     return render_template("ping.html")
 
-@app.route("/dnsResult")
+@app.route("/dnsResult", methods=['POST', 'GET'])
 def dnsResult():
     output = request.form.to_dict()
     dns = output["dns"]
@@ -77,6 +77,25 @@ def dnsResult():
 def nslookup():
     return render_template("nslookup.html")
 
+@app.route("/webInfoResult", methods=['POST', 'GET'])
+def webInfoResult():
+    output = request.form.to_dict()
+    web = output["web"]
+
+    webInfoOut = subprocess.run(['nslookup', web], capture_output=True, text=True).stdout
+    return render_template("nslookup.html", webInfoOut=webInfoOut)
+
+@app.route("/tracert")
+def tracert():
+    return render_template("tracert.html")
+
+@app.route("/routeResult", methods=['POST', 'GET'])
+def routeResult():
+    output = request.form.to_dict()
+    dns = output["dns"]
+
+    dnsRouteOut = subprocess.run(['tracert', dns], capture_output=True, text=True).stdout
+    return render_template("tracert.html", dnsRouteOut=dnsRouteOut)
 
 @app.route("/update_server", methods=['POST'])
 def webhook():
