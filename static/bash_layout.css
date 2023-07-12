@@ -16,16 +16,25 @@ body {
   font-weight: 400;
   line-height: normal;
   margin: 35px; /* Add margin around the body */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Set the body height to full viewport height */
+}
+/*for main content for page without navbar*/
+.main_content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set the body height to full viewport height */
 }
 
 h1 {
   font-size: 100px; /* Adjusted font size for h1 */
   margin-bottom: 20px; /* Add margin at the bottom of the heading */
+}
+
+h1.left-align-header {
+    text-align: center;
+    font-size: 90px;
 }
 
 p {
@@ -77,11 +86,57 @@ label{
   background-color: #231F20; /* Dark gray */
   color: #FFFAF1; /* Cream */
   padding: 15px; /* Add padding within the output div */
-  width: 90%; /* Expand the width to 100% of its parent container */
-  height: 200px; /* Set a fixed height for the output box */
+  width: 100%; /* Expand the width to 100% of its parent container */
+  height: 300px; /* Set a fixed height for the output box */
   overflow: auto; /* Add scrollbar when content exceeds the box height */
 }
 
 
+/*CSS for Navbar Below*/
+/* Navbar */
 
+.navbar {
+  height: 110px; /* Set a fixed height for the navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DAE9F7;
+  margin-right: auto; /* Move the navbar brand to the left */
+}
+
+
+.navbar-brand {
+  color: #231F20; /* Dark gray */
+  font-family: 'IM Fell English SC', serif;
+  font-size: 28px; /* User-friendly font size for the navbar brand */
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #646465; /* Dark slate gray */
+}
+
+.nav-link {
+  color: #231F20; /* Dark gray */
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; /* User-friendly font size for the navbar links */
+  font-weight: 300;
+  margin-right: 25px;
+  margin-left: 100px;
+  align: center;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #646465; /* Dark slate gray */
+}
+
+.navbar-toggler-icon {
+  color: #231F20; /* Dark gray */
+}
+.navbar-toggler {
+  margin-left: auto; /* Move the navbar toggler to the right side */
+}
 
