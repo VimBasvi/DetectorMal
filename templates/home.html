@@ -1,53 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/bash_layout.css">
-    <link rel="stylesheet" type="text/css" href="../static/main.css">
-    <title>Welcome to detectorMal</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">DeTeCtorMAL</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="tracecert.html">Tracecert</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nslookup.html">Nslookup</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sandbox.html">Sandbox</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ping.html">Ping</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sign_in.html">Sign In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sign_up.html">Sign Up</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+{% extends 'bash_layout.html' %}
 
+{% block content %}
 <h1>Welcome to detectorMal</h1>
-<p>A tool to help you expose any malware in your url, I.P address and more </p>
-<p1> Please click which tool you would like to use down below</p1>
+<p>A tool to help you expose any malware in your URL, IP address, and more.</p>
+<p>Please click which tool you would like to use below:</p>
+
 <div class="button-container">
     <a href="sandbox.html" class="button-link">
         <button class="custom-button">Sandbox</button>
@@ -87,5 +44,4 @@
         <p>A network diagnostic tool to check the connectivity of a host.</p>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}
