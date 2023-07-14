@@ -46,13 +46,13 @@
     
 
     <h1 class="left-align-header">NsLookUp</h1>
-    <p>Some text about what ping does and how to use it </p>
-
+    <p>Name Server Lookup: discover IP address or DNS record of a specific domain name</p>
+    <form action="/nsResult" method="POST">
     <div class="form-container">
         <form>
             <div class="form-group">
                 <label for="urlInputLook" class="form-label">Enter URL: </label>
-                <input type="text" class="form-control" id="urlInputLook" placeholder="URL">
+                <input type="text" class="form-control" id="name" name="name" placeholder="URL">
             </div>
             <button type="submit" class="btn btn-primary">Submit Query</button>
         </form>
@@ -61,6 +61,10 @@
     <div class="output">
         <h2>Output</h2>
         <p>Result</p>
+        {% if name %}
+        {{name}}
+        {% endif %}
     </div>
+    </form>
     </body>
 </html>

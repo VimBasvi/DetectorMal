@@ -46,22 +46,25 @@
     
 <div class="main_content">
     <h1>Ping</h1>
-    <p>Some text about what ping does and how to use it </p>
-
+    <p>Troubleshoot connectivity/ reachability of a host IP by sending packages</p>
+    <form action="/pingResult" method="POST">
     <div class="form-container">
         <form>
             <div class="form-group">
                 <label for="dnsInput" class="form-label">Enter DNS: </label>
-                <input type="text" class="form-control" id="dnsInput" placeholder="DNS">
+                <input type="text" class="form-control" id="name" name="name" placeholder="DNS">
             </div>
             <button type="submit" class="btn btn-primary">Submit Query</button>
         </form>
     </div>
-
     <div class="output">
         <h2>Output</h2>
         <p>Result</p>
+        {% if name %}
+        {{name}}
+        {% endif %}
     </div>
+    </form>
 </div>
 </body>
 </html>

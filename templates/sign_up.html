@@ -1,4 +1,4 @@
-<DOCTYPE!>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Sign Up</title>
@@ -44,7 +44,17 @@
         </div>
     </nav>
     
-        
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert-messages">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.category }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+    {% endwith %}
     <div class="container">
         <h1>Sign Up</h1>
         <form id="signup-form" method="POST" action="">
@@ -59,11 +69,7 @@
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" name ="password" placeholder="Enter your password">
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
-            </div>
+            
             <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>

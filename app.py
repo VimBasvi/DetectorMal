@@ -1,8 +1,11 @@
 import sqlalchemy
+import requests
+import subprocess
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from flask import Flask, request, render_template, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__, template_folder='templates')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DetectorMal.db'  # Replace with your MySQL connection details
@@ -58,7 +61,7 @@ def signin():
         else:
             print("INVALID USER")
             # User not found or incorrect password, sign in failed
-            flash('Invalid username or password!', 'error')
+            flash('Invalid username or password! Sign up at the sign up page.', 'error')
             return redirect(url_for('signin'))
 
     return render_template('sign_in.html')
@@ -67,17 +70,54 @@ def signin():
 def sandbox():
     return render_template('sandbox.html')
 
+@app.route('/urlResult', methods = ['POST', 'GET'])
+def urlResult():
+    url = request.form['name']
+
+    headers = {'accept': 'application/json',
+               'user-agent': 'Falcon Sandbox',
+               'api-key': 'rr8apy9g30c3065f9evu945q229921c6fe9gl7hxba57df3a6e117h4012e8d257',
+               'Content-Type': 'application/x-www-form-urlencoded'}
+    data = 'scan_type=all&url=' + url
+    response = requests.post('https://www.hybrid-analysis.com/api/v2/quick-scan/url', headers=headers, data=data)
+    result = response.json()
+    #print(result)
+
+    return render_template("sandbox.html", name=result)
+
 @app.route('/tracert')
 def tracert():
     return render_template('tracert.html')
 
+@app.route('/traceResult', methods = ['POST','GET'])
+def traceResult():
+    dns = request.form['name']
+
+    dnsOutput = subprocess.run(['tracert', dns], capture_output=True, text=True).stdout
+    return render_template('tracert.html', name=dnsOutput)
+    
 @app.route('/nslookup')
 def nslookup():
     return render_template('nslookup.html')
 
+@app.route('/nsResult', methods = ['POST','GET'])
+def nsResult():
+    url = request.form['name']
+
+    urlOutput = subprocess.run(['nslookup', url], capture_output=True, text=True).stdout
+    return render_template('nslookup.html', name=urlOutput)
+
 @app.route('/ping')
 def ping():
     return render_template('ping.html')
+
+@app.route('/pingResult', methods = ['POST','GET'])
+def pingResult():
+    dns = request.form['name']
+
+    dnsOutput = subprocess.run(['ping', dns], capture_output=True, text=True).stdout
+    return render_template('ping.html', name=dnsOutput)
+
 
 @app.route('/')
 def home():
@@ -89,3 +129,4 @@ with app.app_context():
 if __name__ == '__main__':
     app.secret_key = 'secretkey'
     app.run()
+

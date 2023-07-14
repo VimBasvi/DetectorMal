@@ -13,40 +13,46 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="home.html">DeTeCtorMAL</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="tracert.html">Tracert</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nslookup.html">Nslookup</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="sandbox.html">Sandbox</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ping.html">Ping</a>
-        </li>
-
-      </ul>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('home') }}">DeTeCtorMAL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('tracert') }}">Tracert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('nslookup') }}">Nslookup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('sandbox') }}">Sandbox</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('ping') }}">Ping</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('signin') }}">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <h1 class="left-align-header">Tracert</h1>
-<p>Some text about what ping does and how to use it </p>
-
+<p>tracert: sends 3 packages through multiple devices to reach a target IP address.</p>
+<p>WARNING: ROUTER/SWITCH 3-DESTINATION WILL BE BLOCKED THROUGH VSCODE. USE ONLY TO COUNT DEVICES BETWEEN YOU AND DESTINATION IP</p>
+<form action="/traceResult" method="POST">
 <div class="form-container">
   <form>
     <div class="form-group">
-      <label for="urlInputTrace" class="form-label">Enter URL: </label>
-      <input type="text" class="form-control" id="urlInputTrace" placeholder="URL">
+      <label for="urlInputTrace" class="form-label">Enter DNS: </label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="DNS">
     </div>
     <button type="submit" class="btn btn-primary">Submit Query</button>
   </form>
@@ -55,6 +61,10 @@
 <div class="output">
   <h2>Output</h2>
   <p>Result</p>
+  {% if name %}
+  {{name}}
+  {% endif %}
 </div>
+</form>
 </body>
 </html>
