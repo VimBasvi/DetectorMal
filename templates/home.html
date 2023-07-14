@@ -6,7 +6,7 @@
 <p>Please click which tool you would like to use below:</p>
 
 <div class="button-container">
-    <a href="sandbox.html" class="button-link">
+    <a href="{{ url_for('sandbox') }}" class="button-link">
         <button class="custom-button">Sandbox</button>
     </a>
     <div class="button-info">
@@ -16,7 +16,7 @@
 </div>
 
 <div class="button-container">
-    <a href="tracert.html" class="button-link">
+    <a href="{{ url_for('tracert') }}" class="button-link">
         <button class="custom-button">Tracert</button>
     </a>
     <div class="button-info">
@@ -26,7 +26,7 @@
 </div>
 
 <div class="button-container">
-    <a href="nslookup.html" class="button-link">
+    <a href="{{ url_for('nslookup') }}" class="button-link">
         <button class="custom-button">Nslookup</button>
     </a>
     <div class="button-info">
@@ -36,7 +36,7 @@
 </div>
 
 <div class="button-container">
-    <a href="ping.html" class="button-link">
+    <a href="{{ url_for('ping') }}" class="button-link">
         <button class="custom-button">Ping</button>
     </a>
     <div class="button-info">

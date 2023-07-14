@@ -19,6 +19,14 @@ h1 {
 
 .button-info {
   margin-right: 10px;
+  transition: transform 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.button-info:hover{
+  transform: translateX(-10px);
+  transform: translateY(-10px);
+  color: red;
 }
 
 .custom-button {
@@ -29,6 +37,16 @@ h1 {
   margin: 35px;
   margin-bottom: 20px;
   width: 200px;
+
+  transition: transform 0.3s, background-color 0.3s, color 0.3s
+}
+
+.custom-button:hover{
+  transform: translateY(-10px);
+  transform: rotate3d(1, 1, 1, 15deg);
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+
 }
 
 body {
