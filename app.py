@@ -6,10 +6,10 @@ from sqlalchemy.orm import sessionmaker
 from flask import Flask, request, render_template, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__, template_folder='templates')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DetectorMal.db'  # Replace with your MySQL connection details
 db = SQLAlchemy(app) # create database 
+
 
 # Create the user class
 class User(db.Model):
@@ -56,7 +56,7 @@ def signin():
         if user and user.password == password:
             # User found, sign in successful
             print("VALID USER")
-            flash('Sign in successful!', 'success')
+            flash(f'Sign in successful for{username}!', 'success')
             return redirect(url_for('home'))
         else:
             print("INVALID USER")
