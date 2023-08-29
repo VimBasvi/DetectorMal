@@ -1,80 +1,59 @@
 body {
-  background: #fafafa;
-  color: #333333;
-  margin-top: 5rem;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 35px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+h1 {
+  font-size: 100px;
+  font-weight: 100;
+  margin: 0 auto 40px; /* Center the heading horizontally and add margin at the bottom */
+  text-align: center; /* Center the text inside the heading */
 }
 
-.bg-steel {
-  background-color: #865f89;
+p {
+  font-family: 'Roboto', sans-serif; /* Use Roboto as the alternative font */
+  text-align: center
 }
 
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
-
-.content-section {
-  background: #ffffff;
-  padding: 10px 20px;
-  border: 1px solid #dddddd;
-  border-radius: 3px;
+.button-container {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.article-title {
-  color: #444444;
+.button-info {
+  margin-right: 10px;
+  transition: transform 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+.button-info:hover {
+  transform: translate(-10px, -10px);
+  color: #e74c3c; /* Red color */
 }
 
-.article-content {
-  white-space: pre-line;
+.custom-button {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e74c3c; /* Red border */
+  color: #e74c3c; /* Red color */
+  padding: 10px 20px;
+  margin: 35px;
+  margin-bottom: 20px;
+  width: 200px;
+  border-radius: 10px; /* Round the edges of the buttons */
+  transition: transform 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
+.custom-button:hover {
+  transform: translateY(-5px) rotate(3deg);
+  background-color: #e74c3c; /* Red background on hover */
+  color: #ffffff; /* White color on hover */
+  border-color: #c0392b; /* Darker red border on hover */
 }
 
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
-}
-
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
+input[type="text"] {
+  margin-top: 10px;
 }

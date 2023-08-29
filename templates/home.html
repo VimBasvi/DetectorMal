@@ -1,5 +1,45 @@
-{% extends "layout.html" %}
+{% extends 'bash_layout.html' %}
+
 {% block content %}
-    <h2>{{ subtitle }}</h2>
-    <p>{{ text }}</p>
-{% endblock content %}
+<h1>detectorMal</h1>
+<p>A tool to help you expose any malware in your URL, IP address, and more.</p>
+<p style="text-align: left;" >Please click which tool you would like to use below:</p>
+
+<div class="button-container">
+    <a href="{{ url_for('sandbox') }}" class="button-link">
+        <button class="custom-button">Sandbox</button>
+    </a>
+    <div class="button-info">
+        <p>A tool to analyze URLs for malware detection.</p>
+    </div>
+</div>
+
+<div class="button-container">
+    <a href="{{ url_for('nslookup') }}" class="button-link">
+        <button class="custom-button">Nslookup</button>
+    </a>
+    <div class="button-info">
+        <p>A tool to query DNS for IP address and domain information to use for tracert and ping.</p>
+    </div>
+</div>
+
+
+<div class="button-container">
+    <a href="{{ url_for('tracert') }}" class="button-link">
+        <button class="custom-button">Tracert</button>
+    </a>
+    <div class="button-info">
+        <p>A network diagnostic tool to trace the route of network packets.</p>
+    </div>
+</div>
+
+
+<div class="button-container">
+    <a href="{{ url_for('ping') }}" class="button-link">
+        <button class="custom-button">Ping</button>
+    </a>
+    <div class="button-info">
+        <p>A network diagnostic tool to check the connectivity of a host.</p>
+    </div>
+</div>
+{% endblock %}

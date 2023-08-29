@@ -1,0 +1,24 @@
+{% extends 'bash_layout.html' %}
+
+{% block content %}
+    <h1 class="left-align-header">Tracert</h1>
+    <p>Trace the route that packets take from your device to a remote host</p>
+    <form action="/traceResult" method="POST">
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="hostInput" class="form-label">Enter Host: </label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Host or IP Address">
+                  </div>
+                <button type="submit" class="btn btn-primary">Trace Route</button>
+            </form>
+        </div>
+        <div class="output">
+            <h2>Output</h2>
+            <p>Tracert results:</p>
+            {% if host %}
+              <pre>{{ host }}</pre>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}
