@@ -26,7 +26,7 @@ DetectorMal is a utility tool designed to enhance online security by providing i
 
 ## Requirements
 
-- Python X.X.X
+- Python 
 - Requirements.txt
 - Access to personal Hybrid Analysis API key 
 
