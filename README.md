@@ -32,7 +32,7 @@ DetectorMal is a utility tool designed to enhance online security by providing i
 
 ## Acknowledgments
 
-This project was developed as an SEO Tech Developer Final Project. We extend our gratitude to Perenual API for providing the plant data.
+This project was developed during SEO Tech Developer Project. We extend our gratitude to Hybrid Analysis API for providing the malware analysis tools.
 
 ## Contact
 
